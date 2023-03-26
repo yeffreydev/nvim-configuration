@@ -21,6 +21,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lock
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 
+"snippets para javascript
+Plug 'SirVer/ultisnips'
+Plug 'mlaursen/vim-react-snippets'
+
+" EMMET
+Plug 'mattn/emmet-vim'
+
+" comentarios 
+Plug 'tpope/vim-commentary'
+
 call plug#end()
 
 " GRUVBOX configuracion
@@ -32,6 +42,27 @@ colorscheme gruvbox-material
 lua << EOF
 require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
 EOF
+
+" snippets configuracion
+let g:UtilSnipsExpandTrigger="<tab>"
+
+" Emmet configuracion
+let g:user_emmet_mode='n'
+let g:user_emmet_leader_key=','
+let g:user_emmet_settings={
+\ 'javascript': {
+\ 'extends': 'jsx'
+\ }
+\ }
+
+" Prettier configuracion
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+nnoremap <C-D> :Prettier<CR>
+
+" configuracion de comentarios
+nnoremap <space>/ :Commentary<CR>
+vnoremap <space>/ :Commentary<CR>
+
 
 "-------------------------------------------------------------------------
 "COC configuracion
