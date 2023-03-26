@@ -7,7 +7,8 @@ set showmatch
 set relativenumber
 
 " change below line with your config path
-call plug#begin('C:\Users\yeffr\AppData\Local\nvim\.vim\plugged')
+let startPath = getenv('START_NVIM_PATH')
+call plug#begin(startPath)
 
 " Temas GRUVBOX
 Plug 'sainnhe/gruvbox-material'
@@ -37,6 +38,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 
 Plug 'scrooloose/nerdtree'
+
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -75,6 +78,7 @@ vnoremap <space>/ :Commentary<CR>
 let g:airline#extensions#tabline#enabled = 1
 
 "NERDTREE Configuracion
+let NERDTreeQuitOnOpen=1
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
