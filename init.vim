@@ -6,7 +6,7 @@ set encoding=utf-8
 set showmatch
 set relativenumber
 
-
+" change below line with your config path
 call plug#begin('C:\Users\yeffr\AppData\Local\nvim\.vim\plugged')
 
 " Temas GRUVBOX
@@ -30,6 +30,13 @@ Plug 'mattn/emmet-vim'
 
 " comentarios 
 Plug 'tpope/vim-commentary'
+
+" indents https://github.com/Yggdroot/indentLine
+Plug 'Yggdroot/indentLine'
+
+Plug 'vim-airline/vim-airline'
+
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
@@ -62,6 +69,14 @@ nnoremap <C-D> :Prettier<CR>
 " configuracion de comentarios
 nnoremap <space>/ :Commentary<CR>
 vnoremap <space>/ :Commentary<CR>
+
+
+" Configuracion de airline
+let g:airline#extensions#tabline#enabled = 1
+
+"NERDTREE Configuracion
+nnoremap <silent> <F2> :NERDTreeFind<CR>
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 
 "-------------------------------------------------------------------------
